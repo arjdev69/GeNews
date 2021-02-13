@@ -11,6 +11,8 @@ import history from "services/history";
 
 import { store, persistor } from "./store";
 
+import GlobalStyles from "styles";
+
 import "react-toastify/dist/ReactToastify.css";
 
 const App: React.FC = () => {
@@ -18,6 +20,7 @@ const App: React.FC = () => {
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Router history={history}>
+          <GlobalStyles />
           <Routes />
           <ToastContainer autoClose={3000} />
         </Router>

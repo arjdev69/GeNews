@@ -4,15 +4,17 @@ import { BrowserRouter, Switch } from "react-router-dom";
 
 import Route from "./Route";
 
-import { Home, News } from "views";
+import { Home, Technology, NotFound, Science, Favorites } from "views";
 
 const Routes: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
         <Route isPrivate={false} path="/" exact component={Home} />
-        <Route isPrivate path="/News" component={News} />
-        <Route isPrivate={false} component={News} />
+        <Route isPrivate path="/technology" component={Technology} />
+        <Route isPrivate path="/science" component={Science} />
+        <Route isPrivate path="/favorites" component={Favorites} />
+        <Route isPrivate={false} component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
