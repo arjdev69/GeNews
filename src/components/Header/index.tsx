@@ -1,5 +1,8 @@
 import React from "react";
 
+import { useDispatch, useSelector } from "react-redux";
+import { setModeTheme } from "store/modules/modeTheme/actions";
+
 import { Link } from "react-router-dom";
 import { LABELS } from "utils/Constants";
 
@@ -10,6 +13,13 @@ import { Container, Content } from "./styles";
 import { Memory, Home, School, Bookmark } from "@material-ui/icons";
 
 const Header: React.FC = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state: any) => state.Theme);
+
+  const setThemeMode = () => {
+    dispatch(setModeTheme(!theme.isDarkMode));
+  };
+
   return (
     <Container>
       <Content>
@@ -63,7 +73,15 @@ const Header: React.FC = () => {
           </div>
         </nav>
 
-        <aside>DARK</aside>
+        <aside>
+          <span
+            onClick={() => {
+              setThemeMode();
+            }}
+          >
+            DarkMode
+          </span>
+        </aside>
       </Content>
     </Container>
   );
