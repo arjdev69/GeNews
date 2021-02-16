@@ -14,7 +14,7 @@ const IconLabel: React.FC<Props> = ({ button, Icon, text, ...rest }) => {
   return (
     <ListItem button={button}>
       <ListItemIcon>{Icon && <Icon {...rest} />}</ListItemIcon>
-      <ListItemText primary={text} />
+      <ListItemText primary={text} color="primary" />
     </ListItem>
   );
 };
