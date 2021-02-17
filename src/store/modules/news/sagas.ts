@@ -6,7 +6,6 @@ import api from "services/api";
 import { setDataNewsList } from "./actions";
 
 export function* getDataNews({ payload }) {
-  console.log(payload);
   try {
     const Response = yield call(api.get, `${payload.category}.json`, {
       params: {

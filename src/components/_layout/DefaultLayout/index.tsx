@@ -1,11 +1,13 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
 import { Header } from "components";
 
 import { Wrapper } from "./styles";
-import { useSelector } from "react-redux";
+import { COLORS } from "styles/colors";
 
 const DefaultLayout: React.FC = ({ children }) => {
   const { isDarkMode } = useSelector((state: any) => state.Theme);
@@ -14,16 +16,16 @@ const DefaultLayout: React.FC = ({ children }) => {
     palette: {
       type: isDarkMode ? "dark" : "light",
       primary: {
-        light: isDarkMode ? "#000" : "#757ce8",
-        main: isDarkMode ? "#000" : "#757ce8",
-        dark: isDarkMode ? "#000" : "#757ce8",
-        contrastText: isDarkMode ? "#000" : "#757ce8",
+        dark: COLORS.primaryDark,
+        light: COLORS.lightColor,
+        main: isDarkMode ? COLORS.primary : COLORS.lightColor,
+        contrastText: isDarkMode ? COLORS.lightColor : COLORS.primaryText,
       },
       secondary: {
-        light: isDarkMode ? "#000" : "#757ce8",
-        main: isDarkMode ? "#000" : "#757ce8",
-        dark: isDarkMode ? "#000" : "#757ce8",
-        contrastText: isDarkMode ? "#000" : "#757ce8",
+        dark: COLORS.secondaryDark,
+        light: COLORS.secondaryLight,
+        main: isDarkMode ? COLORS.secondary : COLORS.lightColor,
+        contrastText: isDarkMode ? COLORS.lightColor : COLORS.secondaryText,
       },
     },
   });

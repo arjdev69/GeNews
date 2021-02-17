@@ -1,7 +1,7 @@
 import produce from "immer";
 
 const INITIAL_STATE = {
-  isDarkMode: false,
+  isDarkMode: true,
 };
 
 export default function ModeTheme(

@@ -16,7 +16,7 @@ export const Content = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
-    h4 {
+    p {
       margin-right: 0px;
       padding-right: 20px;
       border-right: 1px solid #eee;
@@ -30,7 +30,7 @@ export const Content = styled.div`
 
       a {
         font-weight: bold;
-        color: #058996;
+        color: ${(props) => (props.color ? props.color : "#CCEE")};
 
         .MuiListItem-button {
           display: flex;

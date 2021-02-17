@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 //import 'react-perfect-scrollbar/dist/css/styles.css';
 //import 'react-toastify/dist/ReactToastify.css';
 
+import { COLORS } from "./colors";
+
 const color01 = "#058996";
 
 export default createGlobalStyle`
@@ -21,7 +23,7 @@ export default createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
-    background: linear-gradient(-90deg, ${color01}, #02585569);
+    background: linear-gradient(-180deg, ${COLORS.primary}, ${COLORS.primaryLight});
   }
   body, input, button {
     font: 14px 'Roboto', sans-serif;

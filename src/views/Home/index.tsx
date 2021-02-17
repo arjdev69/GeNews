@@ -10,8 +10,6 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     dispatch(getDataNewsList("home"));
-
-    console.log(news);
   }, []);
 
   return <div>HOME</div>;

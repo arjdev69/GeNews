@@ -6,14 +6,24 @@ import { setModeTheme } from "store/modules/modeTheme/actions";
 import { Link } from "react-router-dom";
 import { LABELS } from "utils/Constants";
 
+import { Typography } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import { useTheme } from "@material-ui/core/styles";
+import {
+  Memory,
+  Home,
+  School,
+  Bookmark,
+  BrightnessMediumTwoTone,
+} from "@material-ui/icons";
+
 import { IconLabel } from "components";
 
 import { Container, Content } from "./styles";
 
-import { Memory, Home, School, Bookmark } from "@material-ui/icons";
-
 const Header: React.FC = () => {
   const dispatch = useDispatch();
+  const themeColor = useTheme();
   const theme = useSelector((state: any) => state.Theme);
 
   const setThemeMode = () => {
@@ -21,10 +31,14 @@ const Header: React.FC = () => {
   };
 
   return (
-    <Container>
-      <Content>
+    <Container style={{ background: themeColor.palette.primary.main }}>
+      <Content color={themeColor.palette.primary.contrastText}>
         <nav>
-          <h4>{LABELS.appName}</h4>
+          <Typography
+            style={{ color: themeColor.palette.primary.contrastText }}
+          >
+            {LABELS.appName}
+          </Typography>
           <div className="contentHeader">
             <span>
               <Link to="/">
@@ -32,7 +46,7 @@ const Header: React.FC = () => {
                   button
                   Icon={Home}
                   text={LABELS.header.label.home}
-                  color="secondary"
+                  style={{ color: themeColor.palette.primary.contrastText }}
                   fontSize="small"
                 />
               </Link>
@@ -43,7 +57,7 @@ const Header: React.FC = () => {
                   button
                   Icon={Memory}
                   text={LABELS.header.label.technology}
-                  color="secondary"
+                  style={{ color: themeColor.palette.primary.contrastText }}
                   fontSize="small"
                 />
               </Link>
@@ -54,7 +68,7 @@ const Header: React.FC = () => {
                   button
                   Icon={School}
                   text={LABELS.header.label.science}
-                  color="secondary"
+                  style={{ color: themeColor.palette.primary.contrastText }}
                   fontSize="small"
                 />
               </Link>
@@ -65,7 +79,7 @@ const Header: React.FC = () => {
                   button
                   Icon={Bookmark}
                   text={LABELS.header.label.favorites}
-                  color="secondary"
+                  style={{ color: themeColor.palette.primary.contrastText }}
                   fontSize="small"
                 />
               </Link>
@@ -74,13 +88,15 @@ const Header: React.FC = () => {
         </nav>
 
         <aside>
-          <span
+          <Button
+            color="primary"
+            style={{ color: themeColor.palette.primary.contrastText }}
             onClick={() => {
               setThemeMode();
             }}
           >
-            DarkMode
-          </span>
+            <BrightnessMediumTwoTone size="small" />
+          </Button>
         </aside>
       </Content>
     </Container>
