@@ -9,7 +9,7 @@ import { Header } from "components";
 import { Wrapper } from "./styles";
 import { COLORS } from "styles/colors";
 
-const DefaultLayout: React.FC = ({ children }) => {
+const DefaultLayout: React.FC = ({ children, route }) => {
   const { isDarkMode } = useSelector((state: any) => state.Theme);
 
   const colorsTheme = createMuiTheme({
@@ -33,7 +33,7 @@ const DefaultLayout: React.FC = ({ children }) => {
   return (
     <Wrapper>
       <ThemeProvider theme={colorsTheme}>
-        <Header />
+        <Header route={route} />
         {children}
       </ThemeProvider>
     </Wrapper>

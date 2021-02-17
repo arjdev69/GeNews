@@ -21,7 +21,7 @@ import { IconLabel } from "components";
 
 import { Container, Content } from "./styles";
 
-const Header: React.FC = () => {
+const Header: React.FC = ({ route }) => {
   const dispatch = useDispatch();
   const themeColor = useTheme();
   const theme = useSelector((state: any) => state.Theme);
@@ -46,8 +46,11 @@ const Header: React.FC = () => {
                   button
                   Icon={Home}
                   text={LABELS.header.label.home}
-                  style={{ color: themeColor.palette.primary.contrastText }}
-                  fontSize="small"
+                  style={{
+                    color: themeColor.palette.primary.contrastText,
+                    fontSize: route.path === "/" ? 30 : 16,
+                    transition: "font-size .20s ease",
+                  }}
                 />
               </Link>
             </span>
@@ -57,8 +60,11 @@ const Header: React.FC = () => {
                   button
                   Icon={Memory}
                   text={LABELS.header.label.technology}
-                  style={{ color: themeColor.palette.primary.contrastText }}
-                  fontSize="small"
+                  style={{
+                    color: themeColor.palette.primary.contrastText,
+                    fontSize: route.path === "/technology" ? 30 : 16,
+                    transition: "font-size .20s ease",
+                  }}
                 />
               </Link>
             </span>
@@ -68,8 +74,11 @@ const Header: React.FC = () => {
                   button
                   Icon={School}
                   text={LABELS.header.label.science}
-                  style={{ color: themeColor.palette.primary.contrastText }}
-                  fontSize="small"
+                  style={{
+                    color: themeColor.palette.primary.contrastText,
+                    fontSize: route.path === "/science" ? 30 : 16,
+                    transition: "font-size .20s ease",
+                  }}
                 />
               </Link>
             </span>
@@ -79,8 +88,11 @@ const Header: React.FC = () => {
                   button
                   Icon={Bookmark}
                   text={LABELS.header.label.favorites}
-                  style={{ color: themeColor.palette.primary.contrastText }}
-                  fontSize="small"
+                  style={{
+                    color: themeColor.palette.primary.contrastText,
+                    fontSize: route.path === "/favorites" ? 30 : 16,
+                    transition: "font-size .20s ease",
+                  }}
                 />
               </Link>
             </span>

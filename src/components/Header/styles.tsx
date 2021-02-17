@@ -35,6 +35,15 @@ export const Content = styled.div`
         .MuiListItem-button {
           display: flex;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .MuiListItemIcon-root {
+          align-items: center;
+          justify-content: center;
+        }
+        .MuiTypography-body1 {
+          font-size: 12px !important;
         }
       }
     }
