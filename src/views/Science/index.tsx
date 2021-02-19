@@ -1,9 +1,13 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { PageBox } from "components";
 
 const Science: React.FC = () => {
-  return <div>SCIENCE</div>;
+  return (
+    <>
+      <PageBox>SCIENCE</PageBox>
+    </>
+  );
 };
 
 export default Science;

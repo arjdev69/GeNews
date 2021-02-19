@@ -1,9 +1,13 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { PageBox } from "components";
 
 const Favorites: React.FC = () => {
-  return <div>FAVORITES</div>;
+  return (
+    <>
+      <PageBox>FAVORITES</PageBox>
+    </>
+  );
 };
 
 export default Favorites;

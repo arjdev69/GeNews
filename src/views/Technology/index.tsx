@@ -1,9 +1,13 @@
 import React from "react";
 
-// import { Container } from './styles';
+import { PageBox } from "components";
 
 const News: React.FC = () => {
-  return <div>Technology</div>;
+  return (
+    <>
+      <PageBox>TECHNOLOGY</PageBox>
+    </>
+  );
 };
 
 export default News;

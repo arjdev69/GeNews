@@ -4,15 +4,23 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { getDataNewsList } from "store/modules/news/actions";
 
+import { PageBox } from "components";
+
 const Home: React.FC = () => {
   const dispatch = useDispatch();
   const news = useSelector((state: any) => state.News);
 
   useEffect(() => {
     dispatch(getDataNewsList("home"));
-  }, []);
+  }, [dispatch]);
 
-  return <div>HOME</div>;
+  console.log(news);
+
+  return (
+    <>
+      <PageBox>HOME</PageBox>
+    </>
+  );
 };
 
 export default Home;
