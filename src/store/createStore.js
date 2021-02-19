@@ -1,6 +1,7 @@
-import { createStore, compose, applyMiddleware, Action, Reducer } from "redux";
+/* eslint-disable import/no-anonymous-default-export */
+import { createStore, compose, applyMiddleware } from "redux";
 
-export default (reducers: Reducer<unknown, Action<any>>, middlewares: any) => {
+export default (reducers, middlewares: any) => {
   const enhancer =
     process.env.NODE_ENV === "development"
       ? compose(console.tron.createEnhancer(), applyMiddleware(...middlewares))

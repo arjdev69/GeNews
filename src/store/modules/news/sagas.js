@@ -17,7 +17,7 @@ export function* getDataNews({ payload }) {
 
     yield put(setDataNewsList(data));
   } catch (err) {
-    toast.error("Falha na autenticação, verifique seus dados");
+    toast.error("Falha na requisição, envie um e-mail");
   }
 }
 
