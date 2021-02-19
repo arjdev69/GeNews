@@ -5,8 +5,6 @@ import { createGlobalStyle } from "styled-components";
 
 import { COLORS } from "./colors";
 
-const color01 = "#058996";
-
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
   * {

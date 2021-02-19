@@ -33,9 +33,9 @@ const DefaultLayout: React.FC = ({ children, route }) => {
   return (
     <Wrapper
       style={{
-        background: `linear-gradient(300deg, ${
+        background: `linear-gradient(190deg, ${
           isDarkMode ? COLORS.secondary : COLORS.lightColor
-        }, ${COLORS.secondaryLight})`,
+        }, ${COLORS.transparentDarkColor})`,
       }}
     >
       <ThemeProvider theme={colorsTheme}>
