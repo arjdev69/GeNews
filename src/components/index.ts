@@ -1,3 +1,10 @@
-export { IconLabel, PageBox, Image, LazyImage } from "./common";
+export {
+  IconLabel,
+  PageBox,
+  Image,
+  LazyImage,
+  Content,
+  GridView,
+} from "./common";
 
 export { default as Header } from "./Header";
