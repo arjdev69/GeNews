@@ -1,12 +1,16 @@
 import React from "react";
 
-import { Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 
 import { useTheme } from "@material-ui/core/styles";
 
 import { Box } from "./styles";
 
-const PageBox: React.FC = ({ children }) => {
+export interface Props {
+  title: string;
+}
+
+const PageBox: React.FC<Props> = ({ children, title }) => {
   const themeColor = useTheme();
 
   return (
@@ -16,6 +20,7 @@ const PageBox: React.FC = ({ children }) => {
         maxWidth="lg"
         className="pageBox"
       >
+        <Typography>{title}</Typography>
         <>{children}</>
       </Container>
     </Box>
